@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rzdb2idb"
+version = "0.1.0"
+description = "[Experimental] Bidirectional Rizin (.rzdb) <-> IDA Pro (.idb/.i64) database translator"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "LGPL-3.0-only"}
+authors = [
+    {name = "doomedraven"}
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/doomedraven/rzdb2idb"
+Repository = "https://github.com/doomedraven/rzdb2idb"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+rzdb2idb = "rzdb2ida.cli:main_rzdb2idb"
+idb2rzdb = "rzdb2ida.cli:main_idb2rzdb"
+rzdb-inspect = "rzdb2ida.cli:main_inspect"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["rzdb2ida*"]
